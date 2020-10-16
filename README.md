@@ -1,9 +1,9 @@
 # Simulation of a Disturbance Observer-Based Integral Backstepping Controller with PX4 and SITL/jMAVSim
 
 
-This repo contains the simulation code for the ICUAS 2020 conference paper submission **'Disturbance Observer-Based Integral Backstepping Controller for Multirotor UAVs'**. 
+This repo contains the simulation code for the JINT journal submission **'Disturbance Observer-Based Integral Backstepping Controller for Multirotor UAVs'**. 
 
-The code simulates a disturbance observer-based integral backstepping control for a multirotor UAV running the [PX4 autopilot firmware](https://px4.io/). **SITL** (*Software in the loop*) is combined with the [jMAVSim](https://github.com/PX4/jMAVSim) simulator. The reason for using SITL simulation is to test controller performance using actual PX4 firmware. This ensures the controller is implementable on-board physical autopilots (e.g. Pixhawk 1, etc.) and that simulation results are closer to what are observed in flight testing. 
+The code simulates a disturbance observer-based integral backstepping control with compensation for drag effects for a multirotor UAV running the [PX4 autopilot firmware](https://px4.io/). **SITL** (*Software in the loop*) is combined with the [jMAVSim](https://github.com/PX4/jMAVSim) simulator. The reason for using SITL simulation is to test controller performance using actual PX4 firmware. This ensures the controller is implementable on-board physical autopilots (e.g. Pixhawk 1, etc.) and that simulation results are closer to what are observed in flight testing. 
 
 ## Contents
 
@@ -105,9 +105,8 @@ pxh> commander mode ancl2 # change the mode to use backstepping control
 
 If you run into any problems using the code, please open an [issue](https://help.github.com/en/github/managing-your-work-on-github/creating-an-issue), or you can email one of us:
 
-* Alan F.Lynch <alan.lynch@ualberta.ca>
-* [Zhijun Xue](https://github.com/wonderfulxue)  <xzj0319@gmail.com>
 * Amir Moeini <moeini@ualberta.ca>
+* Alan F.Lynch <alan.lynch@ualberta.ca>
 
 ### 1. Debug the controller
 
@@ -142,3 +141,4 @@ For all the parameters option, you can see the [mc_dobibs_control_param.c](./src
 
 ## Acknowledgement
 Thanks to the [PX4 team](https://px4.io/) for their open-source autopilot on which this code is based.
+# UAV_DOBIBS_DRAG
