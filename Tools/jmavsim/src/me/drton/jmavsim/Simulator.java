@@ -486,6 +486,7 @@ public class Simulator implements Runnable {
         sensors.setNoise_Prs(0.025f);
 	vehicle.setSensors(sensors, getSimMillis());*/
 
+        vehicle.setDragRotate(0.1);
         vehicle.setDragMove(0.01);
         SimpleSensors sensors = new SimpleSensors();
         sensors.setGPSInterval(20);
@@ -516,7 +517,7 @@ public class Simulator implements Runnable {
         vehicle.setMomentOfInertia(I);
         vehicle.setMass(0.25);
         vehicle.setDragMove(0.01);
-        //v.setDragRotate(0.1);
+        vehicle.setDragRotate(0.1);
 
         SimpleSensors sensors = new SimpleSensors();
         sensors.setGPSInterval(50);

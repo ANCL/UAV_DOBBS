@@ -21,6 +21,9 @@ public:
         _i_df_0(this,"I_DF_1"),
         _i_df_1(this,"I_DF_2"),
         _i_df_2(this,"I_DF_3"),
+        _i_dtau_0(this,"I_DF_1"),
+        _i_dtau_1(this,"I_DF_2"),
+        _i_dtau_2(this,"I_DF_3"),
         _int_er_0(this,"I_PARAM"),
         _int_er_1(this,"I_PARAM"),
         _int_er_2(this,"I_PARAM"),
@@ -45,8 +48,16 @@ public:
         param_get(param_find("DOBIBS_BS_K2"), &k2_bs);
         param_get(param_find("DOBIBS_BS_K3"), &k3_bs);
         param_get(param_find("DOBIBS_BS_K4"), &k4_bs);
-        param_get(param_find("DOBIBS_DOG_K"), &k_df);
-    }
+        param_get(param_find("DOBIBS_FDOG"), &k_df);
+        param_get(param_find("DOBIBS_TAUDOG"), &k_dtau);
+        param_get(param_find("DOBIBS_DOBMU"), &DOBMU);
+        param_get(param_find("DOBIBS_J1NF"), &J1_nf);
+        param_get(param_find("DOBIBS_J2NF"), &J2_nf);
+        param_get(param_find("DOBIBS_J3NF"), &J3_nf);
+        param_get(param_find("DOBIBS_PSI_K1"), &k_psi_1);
+        param_get(param_find("DOBIBS_PSI_K2"), &k_psi_2);
+
+            }
     void update();
     int parameters_update();
 
@@ -55,6 +66,9 @@ private:
     BlockIntegral _i_df_0;
     BlockIntegral _i_df_1;
     BlockIntegral _i_df_2;
+    BlockIntegral _i_dtau_0;
+    BlockIntegral _i_dtau_1;
+    BlockIntegral _i_dtau_2;
     BlockIntegral _int_er_0;
     BlockIntegral _int_er_1;
     BlockIntegral _int_er_2;
@@ -77,9 +91,19 @@ private:
     float k4_bs;
     //Observer gain
     float k_df;
+    float k_dtau;
+    float DOBMU;
+    float J1_nf;
+    float J2_nf;
+    float J3_nf;
+    float k_psi_1;
+    float k_psi_2;
+
+
 
     float obs=0;
     float u=15.69;
+    float us=15.69;
     float u_dot=0;
     float d_zdf_0=0;
     float z_df_0=0;
@@ -87,6 +111,12 @@ private:
     float z_df_1=0;
     float d_zdf_2=0;
     float z_df_2=0;
+    float d_zdtau_0=0;
+    float z_dtau_0=0;
+    float d_zdtau_1=0;
+    float z_dtau_1=0;
+    float d_zdtau_2=0;
+    float z_dtau_2=0;
     float traj_t=0;
     float T=20;
     int traj=0;

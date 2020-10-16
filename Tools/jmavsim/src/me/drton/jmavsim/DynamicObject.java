@@ -48,7 +48,6 @@ public abstract class DynamicObject extends KinematicObject {
         if (lastTime >= 0) {
             double dt = Math.max((t - lastTime) / 1000.0, 0.001);  // constrain time step
             double grnd = getWorld().getEnvironment().getGroundLevelAt(position);
-
             // Position
             tmpVec.set(velocity);
             tmpVec.scale(dt);
@@ -56,9 +55,39 @@ public abstract class DynamicObject extends KinematicObject {
             // Velocity
             acceleration = getForce();
             acceleration.scale(1.0 / mass);
+
+
+//Added By Amir
+
+Vector3d airSpeed = new Vector3d(velocity);
+airSpeed.scale(-1.0);
+if (!ignoreWind) {
+    airSpeed.add(getWorld().getEnvironment().getCurrentWind(position));
+}
+
+Matrix3d DMtx = new Matrix3d();
+
+    DMtx.m00 = 0.3; DMtx.m01 = 0.0;  DMtx.m02 = 0.0;
+    DMtx.m10 = 0.0;  DMtx.m11 = 0.3; DMtx.m12 = 0.0;
+    DMtx.m20 = 0.0;  DMtx.m21 = 0.0;  DMtx.m22 = 0.0;
+
+                tmpVec.set(airSpeed);
+               // tmpVec.scale(-1.0);
+                rotMtx.transpose();
+                rotMtx.transform(tmpVec);
+                DMtx.transform(tmpVec);
+                rotMtx.transpose();
+                rotMtx.transform(tmpVec);
+                acceleration.add(tmpVec);
+
+
+
+//------
+
             if (!ignoreGravity) {
                 acceleration.add(getWorld().getEnvironment().getG());
             }
+
             if (position.z >= grnd && velocity.z + acceleration.z * dt >= 0.0) {
                 // On ground
 //                acceleration.x = -velocity.x / dt;
@@ -91,7 +120,11 @@ public abstract class DynamicObject extends KinematicObject {
                 rotationRate.add(angularAcc);
             }
             attitude.set(utilMatrixToEulers(rotation));
+
+
+
         }
+
         lastTime = t;
     }
 

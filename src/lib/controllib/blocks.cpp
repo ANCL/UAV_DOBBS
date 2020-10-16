@@ -112,7 +112,7 @@ float BlockIntegral::update(float input)
 {
 	// trapezoidal integration
          setY(_limit.update(getY() + input * getDt()));
-    //setY(getY() + input * getDt()); //modifed version
+  // setY(getY() + input * getDt()); //modifed version
 	return getY();
 }
 

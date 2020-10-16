@@ -49,7 +49,7 @@
  * @increment 1
  * @group Multicopter DOBIBS Control
  */
-PARAM_DEFINE_INT32(MC_DOBIBS_TRAJ, 0);
+PARAM_DEFINE_INT32(MC_DOBIBS_TRAJ, 1);
 
 /**
  * Controller Gain
@@ -139,6 +139,7 @@ PARAM_DEFINE_FLOAT(DOBIBS_BS_K2, 2.0f);
  */
 PARAM_DEFINE_FLOAT(DOBIBS_BS_K3, 2.0f);
 
+
 /**
  * Controller Gain
  * 
@@ -151,7 +152,7 @@ PARAM_DEFINE_FLOAT(DOBIBS_BS_K3, 2.0f);
 PARAM_DEFINE_FLOAT(DOBIBS_BS_K4, 2.0f);
 
 /**
- * Disturbance Observer Gain
+ * Force Disturbance Observer Gain
  * 
  * @unit norm
  * @min 0
@@ -159,11 +160,35 @@ PARAM_DEFINE_FLOAT(DOBIBS_BS_K4, 2.0f);
  * @increment 0.05
  * @group Multicopter DOBIBS Control
  */
-PARAM_DEFINE_FLOAT(DOBIBS_DOG_K, 2.0f);
+PARAM_DEFINE_FLOAT(DOBIBS_FDOG, 2.0f);
+
+
+/**
+ * Torque Disturbance Observer Gain
+ * 
+ * @unit norm
+ * @min 0
+ * @decimal 2
+ * @increment 0.05
+ * @group Multicopter DOBIBS Control
+ */
+PARAM_DEFINE_FLOAT(DOBIBS_TAUDOG, 2.0f);
+
+
+
+PARAM_DEFINE_FLOAT(DOBIBS_DOBMU, 0.0f);
+
+PARAM_DEFINE_FLOAT(DOBIBS_J1NF, 0.33f);
+PARAM_DEFINE_FLOAT(DOBIBS_J2NF, 0.33f);
+PARAM_DEFINE_FLOAT(DOBIBS_J3NF, 1.0f);
+PARAM_DEFINE_FLOAT(DOBIBS_PSI_K1, 1.5f);
+PARAM_DEFINE_FLOAT(DOBIBS_PSI_K2, 3.5f);
+
 
 /**
 *  Integration parameter
 */
+
 PARAM_DEFINE_FLOAT(DOBIBS_I_PARAM,1.0f);
 PARAM_DEFINE_FLOAT(DOBIBS_I_PARAM_MAX,2.0f);
 
