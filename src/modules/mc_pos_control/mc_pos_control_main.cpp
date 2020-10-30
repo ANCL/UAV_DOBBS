@@ -1381,8 +1381,8 @@ void MulticopterPositionControl::control_ancl(float dt) {
 			_mode_ancl2 = false;
 			t_circle=0;
 		}
-                _pos_sp(0) = 0.0f;
-                _pos_sp(1) = 0.0f;
+                _pos_sp(0) = 0.5f;
+                _pos_sp(1) = 0.5f;
                 _pos_sp(2) = -1.0f;
 		_run_pos_control = true;
 		_run_alt_control = true;
@@ -1413,8 +1413,8 @@ void MulticopterPositionControl::control_ancl(float dt) {
         t_circle+=dt;  //end move in circle*/
 
 		// start mc_dobibs_control
-        _pos_sp(0) = 0.0f;
-        _pos_sp(1) = 0.0f;
+        _pos_sp(0) = 0.5f;
+        _pos_sp(1) = 0.5f;
         _pos_sp(2) = -1.0f;
            
         _run_alt_control = true;

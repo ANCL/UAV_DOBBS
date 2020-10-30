@@ -512,7 +512,7 @@ int commander_main(int argc, char *argv[])
 				new_main_state = commander_state_s::MAIN_STATE_ANCL1;
 			} else if (!strcmp(argv[2], "ancl2")) {
 				new_main_state = commander_state_s::MAIN_STATE_ANCL2;
-			} else if (!strcmp(argv[2], "altctl")) {
+                        } else if (!strcmp(argv[2], "altctl")) {
 				new_main_state = commander_state_s::MAIN_STATE_ALTCTL;
 			} else if (!strcmp(argv[2], "posctl")) {
 				new_main_state = commander_state_s::MAIN_STATE_POSCTL;

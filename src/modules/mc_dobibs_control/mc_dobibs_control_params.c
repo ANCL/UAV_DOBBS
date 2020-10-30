@@ -49,7 +49,7 @@
  * @increment 1
  * @group Multicopter DOBIBS Control
  */
-PARAM_DEFINE_INT32(MC_DOBIBS_TRAJ, 1);
+PARAM_DEFINE_INT32(MC_DOBIBS_TRAJ, 0);
 
 /**
  * Controller Gain
@@ -60,7 +60,7 @@ PARAM_DEFINE_INT32(MC_DOBIBS_TRAJ, 1);
  * @increment 0.1
  * @group Multicopter DOBIBS Control
  */
-PARAM_DEFINE_FLOAT(DOBIBS_IBS_K1, 2.0f);
+PARAM_DEFINE_FLOAT(DOBIBS_K1, 1.0f);
 
 /**
  * Controller Gain
@@ -71,7 +71,7 @@ PARAM_DEFINE_FLOAT(DOBIBS_IBS_K1, 2.0f);
  * @increment 0.1
  * @group Multicopter DOBIBS Control
  */
-PARAM_DEFINE_FLOAT(DOBIBS_IBS_K2, 2.0f);
+PARAM_DEFINE_FLOAT(DOBIBS_K2, 1.0f);
 
 /**
  * Controller Gain
@@ -82,7 +82,7 @@ PARAM_DEFINE_FLOAT(DOBIBS_IBS_K2, 2.0f);
  * @increment 0.1
  * @group Multicopter DOBIBS Control
  */
-PARAM_DEFINE_FLOAT(DOBIBS_IBS_K3, 2.0f);
+PARAM_DEFINE_FLOAT(DOBIBS_K3, 1.0f);
 
 /**
  * Controller Gain
@@ -93,63 +93,8 @@ PARAM_DEFINE_FLOAT(DOBIBS_IBS_K3, 2.0f);
  * @increment 0.1
  * @group Multicopter DOBIBS Control
  */
-PARAM_DEFINE_FLOAT(DOBIBS_IBS_K4, 2.0f);
+PARAM_DEFINE_FLOAT(DOBIBS_K4, 1.0f);
 
-/**
- * Controller Gain 
- * 
- * @unit norm
- * @min 0
- * @decimal 2
- * @increment 0.1
- * @group Multicopter DOBIBS Control
- */
-PARAM_DEFINE_FLOAT(DOBIBS_IBS_K5, 2.0f);
-
-/**
- * Controller Gain
- * 
- * @unit norm
- * @min 0
- * @decimal 2
- * @increment 0.1
- * @group Multicopter DOBIBS Control
- */
-PARAM_DEFINE_FLOAT(DOBIBS_BS_K1, 2.0f);
-
-/**
- * Controller Gain
- * 
- * @unit norm
- * @min 0
- * @decimal 2
- * @increment 0.1
- * @group Multicopter DOBIBS Control
- */
-PARAM_DEFINE_FLOAT(DOBIBS_BS_K2, 2.0f);
-
-/**
- * Controller Gain
- * 
- * @unit norm
- * @min 0
- * @decimal 2
- * @increment 0.1
- * @group Multicopter DOBIBS Control
- */
-PARAM_DEFINE_FLOAT(DOBIBS_BS_K3, 2.0f);
-
-
-/**
- * Controller Gain
- * 
- * @unit norm
- * @min 0
- * @decimal 2
- * @increment 0.1
- * @group Multicopter DOBIBS Control
- */
-PARAM_DEFINE_FLOAT(DOBIBS_BS_K4, 2.0f);
 
 /**
  * Force Disturbance Observer Gain
@@ -160,7 +105,7 @@ PARAM_DEFINE_FLOAT(DOBIBS_BS_K4, 2.0f);
  * @increment 0.05
  * @group Multicopter DOBIBS Control
  */
-PARAM_DEFINE_FLOAT(DOBIBS_FDOG, 2.0f);
+PARAM_DEFINE_FLOAT(DOBIBS_FDOG, 0.5f);
 
 
 /**
@@ -172,11 +117,9 @@ PARAM_DEFINE_FLOAT(DOBIBS_FDOG, 2.0f);
  * @increment 0.05
  * @group Multicopter DOBIBS Control
  */
-PARAM_DEFINE_FLOAT(DOBIBS_TAUDOG, 2.0f);
+PARAM_DEFINE_FLOAT(DOBIBS_TAUDOG, 0.5f);
 
 
-
-PARAM_DEFINE_FLOAT(DOBIBS_DOBMU, 0.0f);
 
 PARAM_DEFINE_FLOAT(DOBIBS_J1NF, 0.33f);
 PARAM_DEFINE_FLOAT(DOBIBS_J2NF, 0.33f);
@@ -189,8 +132,6 @@ PARAM_DEFINE_FLOAT(DOBIBS_PSI_K2, 3.5f);
 *  Integration parameter
 */
 
-PARAM_DEFINE_FLOAT(DOBIBS_I_PARAM,1.0f);
-PARAM_DEFINE_FLOAT(DOBIBS_I_PARAM_MAX,2.0f);
 
 PARAM_DEFINE_FLOAT(DOBIBS_I_U_PAR,1.0f);
 PARAM_DEFINE_FLOAT(DOBIBS_I_U_PAR_MAX,30.0f);

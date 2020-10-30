@@ -1,7 +1,7 @@
 # Simulation of a Disturbance Observer-Based Integral Backstepping Controller with PX4 and SITL/jMAVSim
 
 
-This repo contains the simulation code for the JINT journal submission **'Exponentially Stable Trajectory Tracking for Multirotor UAVs with Rotor Dragand Disturbance Compensation'**. 
+This repo contains the simulation code for the International Jounral of Control submission **'A Backstepping Disturbance Observer-Based Control for MultirotorUAVs: Theory and Experiment'**. 
 
 The code simulates a disturbance observer-based integral backstepping control with compensation for drag effects for a multirotor UAV running the [PX4 autopilot firmware](https://px4.io/). **SITL** (*Software in the loop*) is combined with the [jMAVSim](https://github.com/PX4/jMAVSim) simulator. The reason for using SITL simulation is to test controller performance using actual PX4 firmware. This ensures the controller is implementable on-board physical autopilots (e.g. Pixhawk 1, etc.) and that simulation results are closer to what are observed in flight testing. 
 
@@ -48,13 +48,13 @@ sudo apt-get install ant protobuf-compiler libeigen3-dev libopencv-dev openjdk-8
 
 The PX4 firmware depends on a number of other projects which are included as submodules. To clone the repo using HTTPS and init all the submodules, run:
 
-```git clone --recursive https://github.com/ANCL/UAV_DOBIBS_V2.git```
+```git clone --recursive https://github.com/ANCL/UAV_DOBBS.git```
 
 Equivalently, you can do this in two steps with:
 
 ```
-git clone https://github.com/ANCL/UAV_DOBIBS_V2.git
-cd UAV_DOBIBS_V2
+git clone https://github.com/ANCL/UAV_DOBBS.git
+cd UAV_DOBBS
 git submodule update --init --recursive
 ```
 
